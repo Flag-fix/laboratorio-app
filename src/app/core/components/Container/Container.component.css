@@ -55,3 +55,19 @@ ul#cities li {
   color: #FF9E9E !important;
   border-bottom: 4px solid #D26464;
 }
+
+#container-card{
+  display: flex;
+  gap: 50px;
+  justify-content: space-evenly;
+}
+
+#container-polar-card{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.container{
+  padding: 25px;
+}

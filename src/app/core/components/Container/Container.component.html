@@ -1,22 +1,32 @@
-<div id="wrapper">
-  <div id="content">
+<div class="container">
+  <div id="wrapper">
+    <div id="content">
+      <div id="city-selected">
+        <h3>Olá, você está vendo os dados de:</h3>
+        <p>São paulo</p>
+      </div>
 
-    <div id="city-selected">
-      <h3>Olá, você está vendo os dados de:</h3>
-      <p>São paulo</p>
+      <div id="recent-searches">
+        <p>Pesquisas recentes</p>
+        <ul id="cities">
+          <li class="active">São Paulo</li>
+          <li>Brasilia</li>
+          <li>Ceará</li>
+          <li>Paraná</li>
+        </ul>
+      </div>
+      <div id="container-card">
+        <app-bar-chart></app-bar-chart>
+        <app-pie-chart></app-pie-chart>
+      </div>
+      <div id="container-card">
+        <app-line-chart></app-line-chart>
+        <app-doughnut-chart></app-doughnut-chart>
+      </div>
+      <div id="container-polar-card">
+        <app-polar-area-chart></app-polar-area-chart>
+      </div>
     </div>
-
-    <div id="recent-searches">
-      <p>Pesquisas recentes</p>
-
-      <ul id="cities">
-        <li class="active">São Paulo</li>
-        <li>Brasilia</li>
-        <li>Ceará</li>
-        <li>Paraná</li>
-      </ul>
-    </div>
-
-
   </div>
 </div>
+

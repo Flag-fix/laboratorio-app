@@ -1,0 +1,17 @@
+.sidenav-footer{
+  display: flex;
+  align-items: center;
+  background-color:white;
+  height: 78px;
+  width: 100%;
+  bottom: 0;
+  justify-content: center;
+}
+
+.footer-text{
+  font-family: "Open+Sans",sans-serif;
+  line-height: 22px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #3333338c;
+}
