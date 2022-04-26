@@ -1,0 +1,28 @@
+#header {
+  height: 104px;
+  background-color: white;
+  width: calc(100% - 290px);
+  float: right;
+}
+
+#title {
+  margin: 36px 30px;
+  display: inline-block;
+  font-size: 24px;
+}
+
+#searchbar {
+  margin-left: calc(100% - 735px);
+  border: 1px solid #3333338c;
+  border-radius: 8px;
+  height: 44px;
+  background-color: #F4F5FC;
+  width: 267px;
+  font-size: 16px;
+}
+
+.icon {
+  padding-left: 64px;
+  background: url("../../../../assets/icon-search.png") no-repeat 23px 11px;
+  background-size: 22px;
+}

@@ -1,0 +1,57 @@
+#wrapper{
+  width: calc(100% - 290px);
+  float: right;
+}
+
+#content {
+  margin: 50px 110px;
+}
+
+#city-selected {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#city-selected h3{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 10px !important;
+}
+
+#city-selected p{
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #D26464;
+  margin: 0px !important;
+}
+
+#recent-searches {
+  float: right;
+}
+
+#recent-searches p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #3333338c;
+}
+
+ul#cities li {
+  display:inline;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3333338c;
+  cursor: pointer;
+}
+
+.active {
+  font-weight: 700 !important;
+  color: #FF9E9E !important;
+  border-bottom: 4px solid #D26464;
+}

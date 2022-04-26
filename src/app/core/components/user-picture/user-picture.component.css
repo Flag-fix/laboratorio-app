@@ -1,0 +1,16 @@
+#profile-picture {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#name {
+  margin: 8px 0px 0px !important;
+}
+
+#occupation {
+  margin: 8px 0px 0px;
+  font-size: 13px;
+  color: #3333338c;
+  font-weight: 500;
+}
