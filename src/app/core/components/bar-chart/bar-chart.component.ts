@@ -12,13 +12,22 @@ export class BarChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.barChart()
+  }
+
+  labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
+  values = [12, 19, 3, 5, 2, 3];
+
+
+
+  barChart (){
     var myChart = new Chart("barChart", {
       type: 'bar',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: this.labels,
         datasets: [{
           label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          data: this.values,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',

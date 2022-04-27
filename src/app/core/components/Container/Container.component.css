@@ -40,6 +40,10 @@
   color: #3333338c;
 }
 
+ul#cities{
+  float: right;
+}
+
 ul#cities li {
   display:inline;
   padding: 10px;
@@ -62,6 +66,12 @@ ul#cities li {
   justify-content: space-evenly;
 }
 
+#container-card-bar{
+  display: flex;
+  gap: 300px  ;
+  justify-content: space-evenly;
+}
+
 #container-polar-card{
   display: flex;
   gap: 50px;
@@ -70,4 +80,10 @@ ul#cities li {
 
 .container{
   padding: 25px;
+}
+
+@media(max-width:1400px){
+  #recent-searches{
+    width: 100%;
+  }
 }
