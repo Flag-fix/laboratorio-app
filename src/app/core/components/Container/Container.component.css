@@ -8,8 +8,7 @@
 }
 
 #city-selected {
-  display: inline-block;
-  vertical-align: top;
+  margin-left: 130px;
 }
 
 #city-selected h3{
@@ -69,7 +68,6 @@ ul#cities li {
 #container-card-bar{
   display: flex;
   gap: 300px  ;
-  justify-content: space-evenly;
 }
 
 #container-polar-card{

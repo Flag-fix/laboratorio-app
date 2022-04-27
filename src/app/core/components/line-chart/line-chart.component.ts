@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
+import {Service} from "../../services/service";
 
 @Component({
   selector: 'app-line-chart',
@@ -9,28 +10,57 @@ Chart.register(...registerables);
 })
 export class LineChartComponent implements OnInit {
 
-  constructor() { }
+  private values: Array<any> = [];
+  private labels: Array<any> = [];
+
+  constructor(
+    private service: Service,
+  ) { }
 
   ngOnInit() {
-    this.chartInLine();
+    this.getQtdObesos()
+  }
+
+  async getQtdObesos() {
+    await this.service.getQtdObesos().then(response => {
+      console.log("Retorno :" + JSON.stringify(response));
+      if (response.length > 0) {
+        console.log(response);
+        for (let item of response) {
+            this.values.push(item.qtdObesoM,item.qtdObesoF)
+        }
+      }
+    })
+    this.chartInLine()
   }
 
 
 
-  labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
-  values = [65, 59, 80, 81, 56, 55, 40]
-
   chartInLine(){
     var myChart = new Chart("lineChart", {
-      type: 'line',
+      type: 'bar',
       data: {
-        labels: this.labels,
+        labels: ["Homens", "Mulheres"],
         datasets: [{
-          label: 'Teste Relatório',
+          label: 'Qtd Obesos por Sexo ',
           data: this.values,
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
         }]
       },
       options: {

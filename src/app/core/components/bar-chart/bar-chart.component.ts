@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Chart, registerables } from 'chart.js';
+import {Component, OnInit} from '@angular/core';
+import {Chart, registerables} from 'chart.js';
+import {Service} from "../../services/service";
+
 Chart.register(...registerables);
 
 @Component({
@@ -9,24 +11,40 @@ Chart.register(...registerables);
 })
 export class BarChartComponent implements OnInit {
 
-  constructor() { }
+  private values: Array<any> = [];
+  private labels: Array<any> = [];
+
+  constructor(
+    private service: Service,
+  ) {
+  }
 
   ngOnInit() {
+    this.buscarDadosEstado();
+  }
+
+  async buscarDadosEstado() {
+    await this.service.getPessoaEstado().then(response => {
+      console.log("Retorno :" + JSON.stringify(response));
+      if (response.length > 0) {
+        console.log(response);
+        for (let item of response) {
+          this.labels.push(item.sigla)
+          this.values.push(item.qtd)
+        }
+      }
+    })
     this.barChart()
   }
 
-  labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']
-  values = [12, 19, 3, 5, 2, 3];
 
-
-
-  barChart (){
+  barChart() {
     var myChart = new Chart("barChart", {
       type: 'bar',
       data: {
         labels: this.labels,
         datasets: [{
-          label: '# of Votes',
+          label: 'Quantidade de Candidatos por Estado ',
           data: this.values,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
